@@ -84,9 +84,9 @@ class Kompleks
     public void Print()
     {
         if (imag >= 0)
-            Console.WriteLine($"{real} + {imag}i");
+            Console.WriteLine($"{real} + {imag}");
         else
-            Console.WriteLine($"{real} - {-imag}i");
+            Console.WriteLine($"{real} - {-imag}");
     }
 
     // f) Destruktor
@@ -120,5 +120,8 @@ class Program
         c = a / b;
         Console.Write("a / b = ");
         c.Print();
+
+        Voris t = new Voris(1, 2, 5);
+        t.Hisobla();
     }
 }
