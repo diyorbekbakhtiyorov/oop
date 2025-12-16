@@ -1,0 +1,43 @@
+class Voris : Kompleks
+{
+    private double a, b, c;
+
+    public Voris(double a, double b, double c)
+    {
+        this.a = a;
+        this.b = b;
+        this.c = c;
+    }
+
+    // Kvadrat tenglama ildizlarini topish
+    public void Hisobla()
+    {
+        double d = b * b - 4 * a * c;
+
+        if (d >= 0)
+        {
+            double x1 = (-b + Math.Sqrt(d)) / (2 * a);
+            double x2 = (-b - Math.Sqrt(d)) / (2 * a);
+
+            Console.WriteLine("Haqiqiy ildizlar:");
+            Console.WriteLine("x1 = " + x1);
+            Console.WriteLine("x2 = " + x2);
+        }
+        else
+        {
+            double realPart = -b / (2 * a);
+            double imagPart = Math.Sqrt(-d) / (2 * a);
+
+            Console.WriteLine("Kompleks ildizlar:");
+
+            Kompleks x1 = new Kompleks(realPart, imagPart);
+            Kompleks x2 = new Kompleks(realPart, -imagPart);
+
+            Console.Write("x1 = ");
+            x1.Print();
+
+            Console.Write("x2 = ");
+            x2.Print();
+        }
+    }
+}
